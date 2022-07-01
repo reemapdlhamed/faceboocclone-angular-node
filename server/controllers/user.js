@@ -28,10 +28,6 @@ exports.register = asyncHandler(async (request, response, next) => {
         userId: newUser._id,
         token: randomBytes(32).toString("hex"),
       }).save();
-      //console.log(token)
-      const message = `${process.env.BASE_URL}/user/verify/${user.id}/${token.token}`;
-      console.log(message);
-      await sendEmail2(newUser.email, "Verify Email", message);
   
       response.status(201).json(newUser);
     } catch (err) {
