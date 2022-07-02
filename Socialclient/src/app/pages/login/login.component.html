@@ -1,0 +1,47 @@
+<div class="login-container">
+  <header class="login-header">
+    <div class="left">
+      <img src="assets/images/fb.png" alt="" />
+      <h2>This is our Social App (Adel&Reem), Welcome!</h2>
+    </div>
+    <div class="right">
+      <mat-card class="login-header-right-card">
+        <mat-card-content class="content">
+          <form #form="ngForm" class="login-form" (ngSubmit)="login(form)">
+            <input
+              type="text"
+              name="email"
+              ngModel
+              placeholder="Email address"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              ngModel
+              placeholder="password"
+              required
+            />
+            <button
+              type="submit"
+              class="login-btn"
+              disabled="form.invalid|| form.pending"
+            >
+              Login
+            </button>
+          </form>
+          <a class="forget-acc" href="#">Forgotten Account?</a>
+          <button class="creat-account" (click)="openRegister()">
+            Create new account
+          </button>
+        </mat-card-content>
+      </mat-card>
+      <p class="tagline">
+        <strong>create a page</strong> for a celebrity ,band or business
+      </p>
+    </div>
+  </header>
+  <footer class="login-footer">
+    <img src="" alt="" />
+  </footer>
+</div>
